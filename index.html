@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HireHub</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Job Listings</h1>
+      <button id="openFormModal">&plus; Add Job</button>
+    </header>
+    <div class="intro">
+      <h1 class="heading">HireHub</h1>
+      <p>Manage, search, and organize your job listings effortlessly.</p>
+    </div>
+
+    <div class="filter">
+      <input type="text" placeholder="Search by name...." id="jobFinder" />
+    </div>
+
+    <main class="main"></main>
+
+    <!-- MoDal -->
+    <div id="jobFormModal" class="modal">
+      <div class="modal-content">
+        <span class="closeBtn">&times;</span>
+        <h2 class="job-title">Add Job</h2>
+
+        <form id="jobForm">
+          <div class="form-group">
+            <label for="jobTitle"> Job Title</label>
+            <input
+              type="text"
+              id="jobTitle"
+              name="jobTitle"
+              placeholder="Enter job title"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="company"> Company</label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              placeholder="Enter company name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="date"> Date</label>
+            <input type="date" id="date" name="date" required />
+          </div>
+
+          <div class="form-group">
+            <label for="description"> Full Description</label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Enter job description"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="skills"> Skills (comma separated)</label>
+            <input
+              type="text"
+              id="skills"
+              name="skills"
+              placeholder="e.g. HTML, CSS, JS"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="salary"> Salary</label>
+            <input
+              type="text"
+              id="salary"
+              name="salary"
+              placeholder="Enter salary"
+              required
+            />
+          </div>
+
+          <button type="submit" class="submitBtn addJobBtn">Add Job</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

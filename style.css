@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #040918 0%, #091540 100%);
+  font-family: "Noto Sans", sans-serif;
+}
+body.light {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f4f4 100%);
+}
+.header {
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: hsl(225, 23%, 24%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.header h1 {
+  color: hsl(200, 60%, 99%);
+  font-size: 2rem;
+}
+.header button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.8rem;
+  border: none;
+  background-color: orange;
+  color: black;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.header button:hover {
+  background-color: hsl(30, 100%, 50%);
+}
+.header button:focus {
+  outline: none;
+  outline: 2px solid orange;
+  outline-offset: 2px;
+}
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.intro .heading {
+  color: hsl(200, 60%, 99%);
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.intro p {
+  color: hsl(200, 60%, 99%);
+  text-align: center;
+}
+
+.intro p::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+  margin: 15px auto 0;
+  box-shadow: 0 0 10px #ff8c00;
+}
+
+.filter {
+  margin: 30px 30px 10px 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px;
+  background-color: hsl(225, 23%, 24%);
+  border-radius: 20px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.filter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+  filter: blur(1px);
+}
+.filter input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 30px;
+  background-color: hsl(226, 11%, 37%);
+  color: hsl(200, 60%, 99%);
+  border: 2px solid #d1d5db;
+  font-size: 1rem;
+}
+
+.filter input::placeholder {
+  color: hsl(200, 60%, 99%);
+}
+
+.filter input:hover {
+  border: 2px solid orange;
+}
+
+.filter input:focus {
+  border: none;
+  outline: 2px solid orange;
+  outline-offset: 2px;
+}
+
+.main {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 30px;
+}
+
+.main > div {
+  flex-basis: calc(25% - 10px);
+}
+
+@media (max-width: 1235px) {
+  .main > div {
+    flex-basis: calc(33.3% - 10px);
+  }
+}
+@media (max-width: 900px) {
+  .main > div {
+    flex-basis: calc(50% - 10px);
+  }
+}
+@media (max-width: 600px) {
+  .main > div {
+    flex-basis: calc(100% - 10px);
+  }
+}
+
+.job-card {
+  padding: 20px;
+  background-color: hsl(226, 25%, 17%);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(25, 42, 86, 0.5), 0 0 20px rgba(9, 21, 64, 0.3);
+}
+.placeholder {
+  background-color: hsl(226, 25%, 17%);
+  border: 2px dashed orange;
+  border-radius: 10px;
+  height: 150px; /* similar to your job-card height */
+  margin: 10px 0;
+}
+.job-card.drag-over {
+  border: 2px dashed orange;
+  transform: scale(1.02);
+  transition: 0.2s;
+}
+.job-card .date {
+  padding: 0.5rem;
+  background-color: hsl(226, 11%, 37%);
+  display: inline-block;
+  border-radius: 0.5rem;
+}
+.job-card .company {
+  color: hsl(226, 11%, 37%);
+  margin-top: 10px;
+  font-weight: 700;
+}
+.job-card .job-title,
+.job-card span,
+.job-card .date,
+.job-card .salary {
+  color: hsl(200, 60%, 99%);
+}
+.job-card .date {
+  margin-top: 10px;
+}
+.job-card .description {
+  color: hsl(0, 0%, 78%);
+}
+.skills {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.skills > span {
+  flex-basis: calc(25% - 10px);
+}
+.skills span {
+  padding: 8px 10px;
+  border: 2px solid grey;
+  border-radius: 10px;
+  text-align: center;
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.details button {
+  padding: 8px 10px;
+  border-radius: 10px;
+  background-color: transparent;
+  color: hsl(0, 0%, 78%);
+  border: 2px solid orange;
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+  z-index: 1;
+  overflow: hidden;
+}
+.details button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: orange;
+  z-index: -1;
+  transition: width 0.5s;
+}
+.details button:hover {
+  color: hsl(225, 23%, 24%);
+}
+.details button:hover::before {
+  width: 100%;
+}
+
+/* Modal Background */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: hsl(225, 23%, 24%);
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  color: #222;
+  font-family: Arial, sans-serif;
+  /* after making */
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.modal.show .modal-content {
+  opacity: 1;
+  transform: scale(1);
+}
+.modal-content label,
+.modal-content h2 {
+  color: hsl(200, 60%, 99%);
+}
+.closeBtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: orange;
+  transition: 0.3s;
+}
+.closeBtn:hover {
+  color: #ff8c00;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+.form-group input,
+.form-group textarea {
+  padding: 10px 8px;
+  border-radius: 10px;
+  border: 2px solid orange;
+  font-size: 0.9rem;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 2px solid orange;
+  border: none;
+}
+
+.addJobBtn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: transparent;
+  color: hsl(0, 0%, 78%);
+  border: 2px solid orange;
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.addJobBtn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: orange;
+  z-index: -1;
+  transition: width 0.5s;
+}
+
+.addJobBtn:hover {
+  color: hsl(225, 23%, 24%);
+}
+.addJobBtn:hover::before {
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 15px;
+  }
+  .submitBtn {
+    font-size: 0.85rem;
+  }
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  .main {
+    margin: 20px 10px;
+  }
+}
